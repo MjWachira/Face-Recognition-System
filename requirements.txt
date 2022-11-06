@@ -4,7 +4,6 @@ click==8.1.3
 cmake==3.24.1.1
 colorama==0.4.5
 DateTime==4.7
-dlib ==19.18
 face-recognition==1.3.0
 face-recognition-models==0.3.0
 Flask==2.2.2
@@ -25,3 +24,4 @@ wincertstore==0.2
 WTForms==3.0.1
 zipp==3.9.0
 zope.interface==5.5.0
+dlib ==19.18

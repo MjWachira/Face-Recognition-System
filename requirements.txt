@@ -24,4 +24,4 @@ wincertstore==0.2
 WTForms==3.0.1
 zipp==3.9.0
 zope.interface==5.5.0
-dlib ==19.18
+

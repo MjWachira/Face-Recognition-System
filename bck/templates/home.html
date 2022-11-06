@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+<div class="container">
+ <div class="row">
+ <div class="col-md-6 col-md-offset-3"><h1>
+Home page:
+{% if session['name'] %}
+Welcome, active as {{ session['name'] }}
+<section class="collection" id="collection">
+    <h3 class="sub-heading"> Quick Actions </h3>
+    <h1 class="heading">  </h1>
+    <div class="box-container">
+        <div class="box">
+            <img src="{{url_for('static',filename='images/face.jpg')}}"alt="">
+            <h3>Detect Faces</h3>
+            <span></span>
+            <a href="#" class="btn">Start</a>
+        </div>
+        <div class="box">
+            <img src="{{url_for('static',filename='images/upload.jpg')}}"alt="">
+            <h3>Upload Pictures</h3>
+            <span></span>
+            <a href="#" class="btn">Start</a>
+        </div>
+        <div class="box">
+            <img src="{{url_for('static',filename='images/upload.jpg')}}"alt="">
+            <h3>Manage Pictures</h3>
+            <span></span>
+            <a href="/manage" class="btn">Start</a>
+        </div>
+        <div class="box">
+            <img src="{{url_for('static',filename='images/upload.jpg')}}"alt="">
+            <h3>Reports</h3>
+            <span></span>
+            <a href="/reports" class="btn">Start</a>
+        </div>
+        <div class="box">
+            <img src="{{url_for('static',filename='images/upload.jpg')}}"alt="">
+            <h3>About</h3>
+            <span></span>
+            <a href="/about" class="btn">Start</a>
+        </div>
+    </div>
+</section>
+{% else %}
+you havent signed into your account
+<body background ="{{url_for('static',filename='images/frs.jpg')}}">
+<section class="collection" id="collection">
+    <h3 class="sub-heading"></h3>
+    <h1 class="heading">  </h1>
+    <div class="box-container">
+        <div class="box">
+            <img src="{{url_for('static',filename='images/upload.jpg')}}"alt="" width="800" height="500">
+            <h3>Login into your account</h3>
+            <a href="/login" class="btn">login</a>
+            <span><br>if you dont have an account <br> </span>
+            <a href="/register" class="btn">Register</a>
+        </div>
+    </div>
+</section>
+{% endif %}</h1>
+ </div>
+ </div>
+</div>
+</div>
+{% endblock %}

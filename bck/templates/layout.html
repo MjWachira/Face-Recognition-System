@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition System</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    
+<!-- header section starts      -->
+
+<header>
+    <a href="#" class="logo"><i class="fas fa-camera"></i>Face Recognition System</a>
+    <nav class="navbar">
+        <a class="" href="/">Home</a>
+        {% if session['name'] %}
+        <a href="/face">Detect Faces</a>
+        <a href="/upload">Upload Photos</a>
+        <a href="/manage">Manage Photos</a>
+        <a href="/reports">Reports</a>
+        <a href="/logout">Logout</a>
+        <a href="/about">About</a>
+        {% else %}
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/about">About FRS</a>
+        {% endif %}
+    </nav>
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+    </div>
+</header>
+<!-- header section ends-->
+<!-- search form  -->
+<form action="" id="search-form">
+    <input type="search" placeholder="search here..." name="" id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fas fa-times" id="close"></i>
+</form>
+<!-- home section starts  -->
+<section class="home" id="home">
+    <div class="swiper-container home-slider">
+        <div class="swiper-wrapper wrapper">
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <p>The Smart System</p>
+                </div>
+                <div class="image">
+                    <img src="images/home3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+<!-- home section ends -->
+<!-- collections section starts  -->
+<section class="collection" id="collection">
+    
+    {% block content %} {% endblock %}
+    <div class="box-container">
+        <body background ="{{url_for('static',filename='images/frs.jpg')}}">
+</section>
+
+<!-- order section ends -->
+<!-- footer section starts  -->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>locations</h3>
+            <a href="#">Nairobi</a>
+            <a href="#">Nyeri</a>
+            <a href="#">Meru</a>
+        </div>
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#">Detect Faces</a>
+            <a href="#">upload photos</a>
+            <a href="#">Manage Photos</a>
+            <a href="#">Reports</a>
+            <a href="#">About</a>
+        </div>
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#">+254718406663</a>
+            <a href="#">0746368183</a>
+            <a href="#">mjwachira1@gmail.com</a>
+            <a href="#">wachirajohn@students.must.ac.ke</a>
+            <a href="#">Meru, kenya</a>
+        </div>
+
+        <div class="box">
+            <h3>follow me</h3>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+        </div>
+    </div>
+    <div class="credit"> copyright @ 2022 by <span>MJ Wachira</span> </div>
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+<!-- custom js file link  -->
+<script src="{{url_for('static',filename='js/script.js')}}"></script> 
+</body>
+</html>

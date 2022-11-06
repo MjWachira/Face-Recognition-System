@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block title %} upload {% endblock %}
+{% block content %} 
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>  
+<div class="container">
+    <div class="row">
+    <div class="col-md-12">
+        <h4>View and Delete Images</h4>
+        <div class="table-responsive">
+        <table id="mytable" class="table table-bordred table-striped">
+            <thead>
+                <th>Photo</th>
+                <th>Delete</th>
+            </thead>
+        <tbody>
+        {% for row in gallery %}
+        <tr>
+        <td><img src="static/uploads/{{row.file_name}}" width="60"/></td>
+        <td><p><a href="/delete/{{row.id}}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a></p></td>
+        </tr>
+        {% endfor %}
+        </tbody>   
+        </table> 
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

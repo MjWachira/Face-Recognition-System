@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block title %} Login {% endblock %}
+{% block content %}
+
+<section class="order" id="order">
+    <h3 class="sub-heading">Enter Your Details</h3>
+    <h1 class="heading"></h1>
+    <form action="/login" method="POST">
+        <div class="inputBox">
+            <div class="input">
+                <span>Email Address</span>
+                <input type="email" placeholder="enter your email address" value="" id="email" name="email">
+            </div>
+        </div>
+        <div class="inputBox">
+            <div class="input">
+                <span>Password</span>
+                <input type="password" placeholder="enter a password" value="" id="Password" name="password">
+            </div>
+        </div>
+    <button class="btn btn-primary">Login</button>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block title %} Reports {% endblock %}
+{% block content %}
+<section class="about" id="about">
+    <h3 class="sub-heading"> People identified through the system </h3>
+    <h1 class="heading">  </h1>
+    <div class="box-container">
+        <div class="box">
+            <h3>
+            <table id="reports" class ='about'>
+                {% for row in csv %}
+                  <tr>
+                  {% for col in row %}
+                  <td>{{ col }}</td>
+                  {% endfor %}
+                  </tr>
+                {% endfor %}
+                </table>  
+            </h3> 
+        </div>
+    </div>
+</section>
+{% endblock %}
